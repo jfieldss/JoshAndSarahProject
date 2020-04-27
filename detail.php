@@ -1,32 +1,29 @@
 <?php
 
-$cars=[
-		[
+$cars=[[
         'year'=>'2015',
-		'make'=>'Jeep',
-		'model'=>'Renegade',
-		'price'=>'$24,179',
-		'condition'=>'Used',
-		'picture'=>'https://cnet3.cbsistatic.com/img/BF4OTBdGSHbQtFw-I81IjGmyQe8=/940x0/2019/12/06/8ff85011-6f3d-4d21-be04-be8c5bd573f0/renegade.jpg'
+	'make'=>'Jeep',
+	'model'=>'Renegade',
+	'price'=>'$24,179',
+	'condition'=>'Used',
+	'picture'=>'https://cnet3.cbsistatic.com/img/BF4OTBdGSHbQtFw-I81IjGmyQe8=/940x0/2019/12/06/8ff85011-6f3d-4d21-be04-be8c5bd573f0/renegade.jpg'
 	],
     [
-		'year'=>'2004',
+	'year'=>'2004',
         'make'=>'Chevrolet',
-		'model'=>'SSR LS',
-		'price'=>'$20,385',
-		'condition'=>'Used',
-		'picture'=>'https://www.oldcaronline.com/photos/839816/839816_1.jpg'
+	'model'=>'SSR LS',
+	'price'=>'$20,385',
+	'condition'=>'Used',
+	'picture'=>'https://www.oldcaronline.com/photos/839816/839816_1.jpg'
 	],
     [
-		'year'=>'2004',
+	'year'=>'2004',
         'make'=>'Honda',
-		'model'=>'S2000',
-		'price'=>'$17,895',
-		'condition'=>'Used',
-		'picture'=>'https://cdn.bringatrailer.com/wp-content/uploads/2018/02/15182107253146c77P1830353-940x705.jpg'
-	]
-	
-];
+	'model'=>'S2000',
+	'price'=>'$17,895',
+	'condition'=>'Used',
+	'picture'=>'https://cdn.bringatrailer.com/wp-content/uploads/2018/02/15182107253146c77P1830353-940x705.jpg'
+	]];
 
 if(!isset($_GET['id'])){
 	echo 'Please enter the id of a member or visit the <a href="index.php">index page</a>.';

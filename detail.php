@@ -1,39 +1,11 @@
 <?php
 
-$cars=[[
-        'year'=>'2015',
-	'make'=>'Jeep',
-	'model'=>'Renegade',
-	'price'=>'$24,179',
-	'condition'=>'Used',
-	'picture'=>'https://cnet3.cbsistatic.com/img/BF4OTBdGSHbQtFw-I81IjGmyQe8=/940x0/2019/12/06/8ff85011-6f3d-4d21-be04-be8c5bd573f0/renegade.jpg'
-	],
-    [
-	'year'=>'2004',
-        'make'=>'Chevrolet',
-	'model'=>'SSR LS',
-	'price'=>'$20,385',
-	'condition'=>'Used',
-	'picture'=>'https://www.oldcaronline.com/photos/839816/839816_1.jpg'
-	],
-    [
-	'year'=>'2004',
-        'make'=>'Honda',
-	'model'=>'S2000',
-	'price'=>'$17,895',
-	'condition'=>'Used',
-	'picture'=>'https://cdn.bringatrailer.com/wp-content/uploads/2018/02/15182107253146c77P1830353-940x705.jpg'
-	]];
+$cars=array_map('str_getcsv', file('data.csv'));;
 
 if(!isset($_GET['id'])){
 	echo 'Please enter the id of a member or visit the <a href="index.php">index page</a>.';
 	die();
 }
-if($_GET['id']<0 || $_GET['id']>count($cars)-1){
-	echo 'Please enter the id of a member or visit the <a href="index.php">index page</a>.';
-	die();
-}
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -46,14 +18,14 @@ if($_GET['id']<0 || $_GET['id']>count($cars)-1){
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title><?= $cars[$_GET['id']]['firstname'].' '.$cars[$_GET['id']]['model'] ?></title>
+    <title><?= $cars[$_GET['id']][1].' '.$cars[$_GET['id']][2] ?></title>
   </head>
   <body>
 	  <div class="container">
-		<h1 style="color:white;"><?= $cars[$_GET['id']]['year'].' '.$cars[$_GET['id']]['make'].' '.$cars[$_GET['id']]['model'] ?></h1>
-		<p style="color:white;"><?= $cars[$_GET['id']]['price'] ?></p>
-		<img src="<?= $cars[$_GET['id']]['picture'] ?>" width="500" />
-		<p style="color:white;"><?= $cars[$_GET['id']]['condition'] ?></p>
+		<h1 style="color:white;"><?= $cars[$_GET['id']][0].' '.$cars[$_GET['id']][1].' '.$cars[$_GET['id']][2] ?></h1>
+		<p style="color:white;"><?= $cars[$_GET['id']][4] ?></p>
+		<img src="<?= $cars[$_GET['id']][5] ?>" width="500" />
+		<p style="color:white;"><?= $cars[$_GET['id']][3] ?></p>
 	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
